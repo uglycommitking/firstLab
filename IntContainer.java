@@ -73,4 +73,47 @@ public class IntContainer {
                 "Индекс " + index + " выходит за пределы. Размер: " + size);
         }
     }
+        public int removeLast() {
+        if (size == 0) throw new RuntimeException("Контейнер пуст!");
+        return remove(size - 1);
+    }
+
+    public int remove(int index) {
+        checkIndex(index);
+        int removed;
+        if (index == 0) {
+            removed = head.value;
+            head = head.next;
+        } else {
+            Node prev = getNode(index - 1);
+            removed = prev.next.value;
+            prev.next = prev.next.next;
+        }
+        size--;
+        return removed;
+    }
+
+    public boolean removeByValue(int value) {
+        boolean found = false;
+
+        while (head != null && head.value == value) {
+            head = head.next;
+            size--;
+            found = true;
+        }
+
+        Node current = head;
+        while (current != null && current.next != null) {
+            if (current.next.value == value) {
+                current.next = current.next.next;
+                size--;
+                found = true;
+            } else {
+                current = current.next;
+            }
+        }
+
+        return found;
+    }
+    
 }

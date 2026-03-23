@@ -1,4 +1,3 @@
-// IntContainer.java
 public class IntContainer {
 
     private static class Node {

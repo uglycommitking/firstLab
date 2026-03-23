@@ -1,3 +1,5 @@
+package org.example;
+
 public class IntContainer {
 
     private static class Node {

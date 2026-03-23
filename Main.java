@@ -17,7 +17,7 @@ public class Main {
                 case 3 -> menuGet();
                 case 4 -> menuRemoveLast();
                 case 5 -> menuRemoveByIndex();
-                case 6 -> menuRemoveByValue();asd
+                case 6 -> menuRemoveByValue();
                 case 7 -> menuPrintAll();
                 case 8 -> menuSize();
                 case 0 -> {
